@@ -3,6 +3,8 @@
         "test": "mocha"
     },
     "dependencies": {
-        "express": "^4.16.3"
+        "express": "^4.16.3",
+        "react": "^16.3.0",
+        "react-dom": "^16.3.0"
     }
 }
