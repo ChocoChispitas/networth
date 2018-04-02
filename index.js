@@ -6,3 +6,5 @@ app.use( express.static( root ) );
 app.listen( 3000, () => console.log( 'Hello world app listening on port 3000!' ) )
 
 console.log('Server started');
+
+$("#grid-basic").bootgrid();
