@@ -12,21 +12,11 @@
     <script type="text/babel">
 
     class App extends React.Component {
-        constructor() {
+        constructor(inputData) {
             super();
             this.state = {
-            data: [{
-                    id: 1,
-                    name: "Equity",
-                    amount: "2947492",
-                    currency: "GBP"
-                }, {
-                    id: 2,
-                    name: "Pension",
-                    amount: "768408",
-                    currency: "USD"
-                }]
-            }
+            data: Object.values(inputData)
+            };
         }
         render() {
             let rows = this.state.data.map(person => {
@@ -63,98 +53,39 @@
             </tr>
         );
         }
+
+        var inputData = [{
+                    id: 1,
+                    name: "Equity",
+                    amount: "2947492",
+                    currency: "GBP"
+                }, {
+                    id: 2,
+                    name: "Pension",
+                    amount: "768408",
+                    currency: "USDcambio"
+                }];
+
             ReactDOM.render(
-                <App />,
+                <App {...inputData} />, 
                 document.getElementById('root')
             );
 
     </script>
-
-    <table id="grid-basic" class="table table-condensed table-hover table-striped">
-        <thead>
-            <tr>
-                <th data-column-id="asset">Asset</th>
-                <th data-column-id="amt" data-type="numeric">amt</th>
-                <th data-column-id="ccy">ccy</th>
-                <th data-column-id="usdeq" data-type="numeric">usdeq</th>
-                <th data-column-id="liquid">liquid</th>
-                <th data-column-id=""></th>
-                <th data-column-id="2017" data-type="numeric">2017</th>
-                <th data-column-id="2016" data-type="numeric">2016</th>
-                <th data-column-id="1y PNL" data-type="numeric">1y PNL</th>
-                <th data-column-id="2y PNL" data-type="numeric">2y PNL</th>
-                <th data-column-id="1y %" data-type="numeric">1y %</th>
-                <th data-column-id="2y %" data-type="numeric">2y %</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Home</td>
-                <td>367000</td>
-                <td>=IF(C2="GBP", B2*$F$1, B2)</td>
-                <td></td>
-                <td></td>
-                <td>461736</td>
-                <td>485750</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>/td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Mortgate</td>
-                <td>eduardo@pingpong.com</td>
-                <td>14.10.2013</td>
-            </tr>
-            <tr>
-                <td>Equity</td>
-                <td>eduardo@pingpong.com</td>
-                <td>14.10.2013</td>
-            </tr>
-            <tr>
-                <td>Pension</td>
-                <td>eduardo@pingpong.com</td>
-                <td>14.10.2013</td>
-            </tr>
-            <tr>
-                <td>Schwab Individual</td>
-                <td>eduardo@pingpong.com</td>
-                <td>14.10.2013</td>
-            </tr>
-            <tr>
-                <td>Savings</td>
-                <td>eduardo@pingpong.com</td>
-                <td>14.10.2013</td>
-            </tr>
-            <tr>
-                <td>Roth</td>
-                <td>eduardo@pingpong.com</td>
-                <td>14.10.2013</td>
-            </tr>
-            <tr>
-                <td>401k</td>
-                <td>eduardo@pingpong.com</td>
-                <td>14.10.2013</td>
-            </tr>
-            <tr>
-                <td>US Pension</td>
-                <td>eduardo@pingpong.com</td>
-                <td>14.10.2013</td>
-            </tr>
-            <tr>
-                <td>US Banks</td>
-                <td>eduardo@pingpong.com</td>
-                <td>14.10.2013</td>
-            </tr>
-            <tr>
-                <td>Total</td>
-                <td>eduardo@pingpong.com</td>
-                <td>14.10.2013</td>
-            </tr>
-        </tbody>
-    </table>
-
+    
+    <form action="/somethingBetter">
+        Name:<br>
+        <input type="text" name="name" value="Mickey">
+        <br>
+        Amount:<br>
+        <input type="text" name="amount" value="Mouse">
+        <br>
+        Currency:<br>
+        <input type="text" name="currency" value="Mickey">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form> 
+    
     <!--
       Note: this page is a great way to try React but it's not suitable for production.
       It slowly compiles JSX with Babel in the browser and uses a large development build of React.
