@@ -1,2 +1,5 @@
-# networth
-Money Manager Expense & Budget
+# Networth 
+
+JS
+
+Work in progress. Money Manager Expense & Budget
